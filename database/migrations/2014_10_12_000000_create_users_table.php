@@ -18,19 +18,21 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('firstname',50);
+            $table->string('surname',50)->nullable();
             $table->string('email',60)->unique();
             $table->string('login',60)->unique();
             $table->string('password');
             $table->string('thumb',50)->nullable();
             $table->tinyInteger('role');
+            $table->boolean('deleted')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
 
         //auto insert an admin
         $user = new User();
-        $user->name = "Admin";
+        $user->firstname = "Admin";
         $user->email = "example@example.com";
         $user->login = "admin";
         $user->password = Hash::make("123456");

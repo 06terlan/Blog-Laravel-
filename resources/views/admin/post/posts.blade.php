@@ -31,7 +31,7 @@
                                 <tr>
                                     <td>{{ $posts->perPage() * ($posts->currentPage() - 1) + $loop->iteration }}</td>
                                     <td>{{ $post->header }}</td>
-                                    <td>{{ $post->author->name }}</td>
+                                    <td>{{ $post->author->fullname() }}</td>
                                     <td>{{ App\Library\Date::d($post->created_at,'d-m-Y H:i') }}</td>
                                     <td>{{ App\Library\Date::d($post->updated_at,'d-m-Y H:i') }}</td>
                                     <th>

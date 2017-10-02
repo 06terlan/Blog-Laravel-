@@ -64,8 +64,9 @@ class ProfileController extends Controller
         }
 
 
-        $user->name = $request->input("name");
-        $user->email = $request->input("email");
+        $user->firstname    = $request->input("name");
+        $user->surname      = $request->input("surname","");
+        $user->email        = $request->input("email");
         $user->save();
     }
 

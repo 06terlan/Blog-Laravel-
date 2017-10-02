@@ -86,8 +86,8 @@ class HomeController extends Controller
 
         foreach ($posts as $post)
         {
-            if( !isset( $qroups[ $post->author->name ] ) ) $qroups[ $post->author->name ] = 0;
-            $qroups[ $post->author->name ] ++;
+            if( !isset( $qroups[ $post->author->fullname() ] ) ) $qroups[ $post->author->fullname() ] = 0;
+            $qroups[ $post->author->fullname() ] ++;
         }
 
         $data = [

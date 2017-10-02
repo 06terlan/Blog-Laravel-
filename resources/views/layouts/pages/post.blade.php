@@ -11,7 +11,7 @@
               <h1>{{$post->header}}</h1>
               <h2 class="subheading">{{$post->short_content}}</h2>
               <span class="meta">Posted by
-                <a href="#">{{ $post->author->name }}</a>
+                <a href="#">{{ $post->author->fullname() }}</a>
                 on {{ App\Library\Date::d($post->created_at,'F d, Y') }}</span>
             </div>
           </div>
